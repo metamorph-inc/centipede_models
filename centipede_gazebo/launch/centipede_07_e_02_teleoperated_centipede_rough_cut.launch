@@ -1,0 +1,134 @@
+<launch>
+  <!-- Load the URDF model into the parameter server -->
+  <param name="robot_description" textfile="$(find centipede_description)/urdf/centipede_07_e.urdf"/>
+
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="respawn_gazebo" value="true"/>
+    <arg name="paused" value="true"/>
+    <arg name="verbose" value="true"/>
+    <arg name="debug" value="true"/>
+    <arg name="world_name" value="$(find centipede_gazebo)/world/fire_hydrant_man_asphalt.world"/>
+  </include>
+  <!-- Spawn a urdf in Gazebo, taking the description from the parameter server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model centipede_7 -x 0 -y 0 -z 0.75" />
+        <!-- Note: I'm explicitly setting the spawn location - this can be a useful trick if you want to spawn multiple robots... -->
+
+  <!-- Start FSM nodes -->
+  <!-- segment 0 -->
+  <!-- leg FSMs -->
+  <node name="seg0_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg0_rightknee_to_rightleg -from_hip seg0_righthip_to_rightleg
+              -to_knee seg0_rightleg_to_rightknee -to_hip seg0_rightleg_to_righthip
+              -from_segment seg0_to_rightleg -to_segment rightleg_to_seg0 -ros_rate 100.0" />
+  <node name="seg0_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg0_leftknee_to_leftleg -from_hip seg0_lefthip_to_leftleg
+              -to_knee seg0_leftleg_to_leftknee -to_hip seg0_leftleg_to_lefthip
+              -from_segment seg0_to_leftleg -to_segment leftleg_to_seg0 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg0" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg0 -from_left_leg leftleg_to_seg0
+              -to_right_leg seg0_to_rightleg -to_left_leg seg0_to_leftleg
+              -from_master cent_to_seg0 -to_master seg0_to_cent -ros_rate 100.0" />
+
+  <!-- segment 1 -->
+  <!-- leg FSMs -->
+  <node name="seg1_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg1_rightknee_to_rightleg -from_hip seg1_righthip_to_rightleg
+              -to_knee seg1_rightleg_to_rightknee -to_hip seg1_rightleg_to_righthip
+              -from_segment seg1_to_rightleg -to_segment rightleg_to_seg1 -ros_rate 100.0" />
+  <node name="seg1_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg1_leftknee_to_leftleg -from_hip seg1_lefthip_to_leftleg
+              -to_knee seg1_leftleg_to_leftknee -to_hip seg1_leftleg_to_lefthip
+              -from_segment seg1_to_leftleg -to_segment leftleg_to_seg1 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg1" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg1 -from_left_leg leftleg_to_seg1
+              -to_right_leg seg1_to_rightleg -to_left_leg seg1_to_leftleg
+              -from_master cent_to_seg1 -to_master seg1_to_cent -ros_rate 100.0" />
+
+  <!-- segment 2 -->
+  <!-- leg FSMs -->
+  <node name="seg2_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg2_rightknee_to_rightleg -from_hip seg2_righthip_to_rightleg
+              -to_knee seg2_rightleg_to_rightknee -to_hip seg2_rightleg_to_righthip
+              -from_segment seg2_to_rightleg -to_segment rightleg_to_seg2 -ros_rate 100.0" />
+  <node name="seg2_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg2_leftknee_to_leftleg -from_hip seg2_lefthip_to_leftleg
+              -to_knee seg2_leftleg_to_leftknee -to_hip seg2_leftleg_to_lefthip
+              -from_segment seg2_to_leftleg -to_segment leftleg_to_seg2 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg2" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg2 -from_left_leg leftleg_to_seg2
+              -to_right_leg seg2_to_rightleg -to_left_leg seg2_to_leftleg
+              -from_master cent_to_seg2 -to_master seg2_to_cent -ros_rate 100.0" />
+
+  <!-- segment 3 -->
+  <!-- leg FSMs -->
+  <node name="seg3_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg3_rightknee_to_rightleg -from_hip seg3_righthip_to_rightleg
+              -to_knee seg3_rightleg_to_rightknee -to_hip seg3_rightleg_to_righthip
+              -from_segment seg3_to_rightleg -to_segment rightleg_to_seg3 -ros_rate 100.0" />
+  <node name="seg3_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg3_leftknee_to_leftleg -from_hip seg3_lefthip_to_leftleg
+              -to_knee seg3_leftleg_to_leftknee -to_hip seg3_leftleg_to_lefthip
+              -from_segment seg3_to_leftleg -to_segment leftleg_to_seg3 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg3" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg3 -from_left_leg leftleg_to_seg3
+              -to_right_leg seg3_to_rightleg -to_left_leg seg3_to_leftleg
+              -from_master cent_to_seg3 -to_master seg3_to_cent -ros_rate 100.0" />
+
+  <!-- segment 4 -->
+  <!-- leg FSMs -->
+  <node name="seg4_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg4_rightknee_to_rightleg -from_hip seg4_righthip_to_rightleg
+              -to_knee seg4_rightleg_to_rightknee -to_hip seg4_rightleg_to_righthip
+              -from_segment seg4_to_rightleg -to_segment rightleg_to_seg4 -ros_rate 100.0" />
+  <node name="seg4_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg4_leftknee_to_leftleg -from_hip seg4_lefthip_to_leftleg
+              -to_knee seg4_leftleg_to_leftknee -to_hip seg4_leftleg_to_lefthip
+              -from_segment seg4_to_leftleg -to_segment leftleg_to_seg4 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg4" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg4 -from_left_leg leftleg_to_seg4
+              -to_right_leg seg4_to_rightleg -to_left_leg seg4_to_leftleg
+              -from_master cent_to_seg4 -to_master seg4_to_cent -ros_rate 100.0" />
+
+  <!-- segment 5 -->
+  <!-- leg FSMs -->
+  <node name="seg5_rightleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side right -from_knee seg5_rightknee_to_rightleg -from_hip seg5_righthip_to_rightleg
+              -to_knee seg5_rightleg_to_rightknee -to_hip seg5_rightleg_to_righthip
+              -from_segment seg5_to_rightleg -to_segment rightleg_to_seg5 -ros_rate 100.0" />
+  <node name="seg5_leftleg" pkg="centipede_description" type="two_dof_leg_fsm_node_v2.py" output="log"
+        args="-side left -from_knee seg5_leftknee_to_leftleg -from_hip seg5_lefthip_to_leftleg
+              -to_knee seg5_leftleg_to_leftknee -to_hip seg5_leftleg_to_lefthip
+              -from_segment seg5_to_leftleg -to_segment leftleg_to_seg5 -ros_rate 100.0" />
+  <!-- leg pair FSM -->
+  <node name="seg5" pkg="centipede_description" type="segment_fsm_node_v2.py" output="screen" launch-prefix="xterm -e"
+        args="-from_right_leg rightleg_to_seg5 -from_left_leg leftleg_to_seg5
+              -to_right_leg seg5_to_rightleg -to_left_leg seg5_to_leftleg
+              -from_master cent_to_seg5 -to_master seg5_to_cent -ros_rate 100.0" />
+
+  <!-- top FSM -->
+  <!-- centipede FSM -->
+  <node name="centipede" pkg="centipede_description" type="centipede_fsm_node.py" output="screen" launch-prefix="xterm -e"
+        args="-to_segment_0 cent_to_seg0 -from_segment_0 seg0_to_cent
+              -to_segment_1 cent_to_seg1 -from_segment_1 seg1_to_cent
+              -to_segment_2 cent_to_seg2 -from_segment_2 seg2_to_cent
+              -to_segment_3 cent_to_seg3 -from_segment_3 seg3_to_cent
+              -to_segment_4 cent_to_seg4 -from_segment_4 seg4_to_cent
+              -to_segment_5 cent_to_seg5 -from_segment_5 seg5_to_cent
+              -from_master master_to_cent -to_master cent_to_master
+              -num_segments 6 -ros_rate 100" />
+  <!-- smach_viewer nodes for visualization | only works with modified smach_viewer.py - Joseph -->
+  <node name="smach_viewer_1" pkg="smach_viewer" type="smach_viewer.py" launch-prefix="xterm -e" />
+  <!--
+  <node name="smach_viewer_2" pkg="smach_viewer" type="smach_viewer.py" launch-prefix="xterm -e" />
+  <node name="smach_viewer_3" pkg="smach_viewer" type="smach_viewer.py" launch-prefix="xterm -e" />
+  <node name="smach_viewer_4" pkg="smach_viewer" type="smach_viewer.py" launch-prefix="xterm -e" />
+  <node name="smach_viewer_5" pkg="smach_viewer" type="smach_viewer.py" launch-prefix="xterm -e" />
+  -->
+</launch>

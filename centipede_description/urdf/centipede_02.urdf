@@ -1,0 +1,1007 @@
+<?xml version="1.0"?>
+<robot name="centipede_2">
+
+  <!-- Link definitions -->
+
+  <link name="world"/>
+
+  <!-- segment 0 -->
+  <link name="seg_0">
+    <visual>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.0066" iyy="0.0066" izz="0.012"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_0_left_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_0_right_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_0_left_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <link name="seg_0_right_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <!-- segment 1 -->
+  <link name="seg_1">
+    <visual>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.0066" iyy="0.0066" izz="0.012"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_1_left_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_1_right_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_1_left_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <link name="seg_1_right_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <!-- segment 2 -->
+  <link name="seg_2">
+    <visual>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.0066" iyy="0.0066" izz="0.012"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_2_left_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_2_right_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_2_left_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <link name="seg_2_right_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <!-- segment 3 -->
+  <link name="seg_3">
+    <visual>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3048 0.3048 0.1524"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.0066" iyy="0.0066" izz="0.012"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_3_left_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="1.570796 0 0" xyz="0 0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_3_right_upper_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="-1.570796 0 0" xyz="0 -0.25 0"/>
+    </inertial>
+  </link>
+
+  <link name="seg_3_left_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+  <link name="seg_3_right_lower_leg_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.5" radius="0.0381"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.000667" iyy="0.0" izz="0.000667"
+               ixy="0.0" ixz="0.0" iyz="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.25"/>
+    </inertial>
+  </link>
+
+<!-- Joint definitions -->
+  <!-- segment 0 -->
+  <joint name="seg_0_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="seg_0"/>
+    <origin rpy="0 0 0" xyz="0 0 3"/>
+  </joint>
+
+  <!-- FIXME: should probably change 'continuous' joints to 'revolute' joints
+              and add joint limits -->
+  <joint name="seg_0_left_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_0"/>
+    <child link="seg_0_left_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_0_right_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_0"/>
+    <child link="seg_0_right_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_0_left_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_0_left_upper_leg_link"/>
+    <child link="seg_0_left_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_0_right_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_0_right_upper_leg_link"/>
+    <child link="seg_0_right_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <!-- segment 1 -->
+  <joint name="seg_1_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="seg_1"/>
+    <origin rpy="0 0 0" xyz="-0.5 0 3"/>
+  </joint>
+
+  <!-- FIXME: should probably change 'continuous' joints to 'revolute' joints
+              and add joint limits -->
+  <joint name="seg_1_left_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_1"/>
+    <child link="seg_1_left_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_1_right_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_1"/>
+    <child link="seg_1_right_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_1_left_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_1_left_upper_leg_link"/>
+    <child link="seg_1_left_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_1_right_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_1_right_upper_leg_link"/>
+    <child link="seg_1_right_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <!-- segment 2 -->
+  <joint name="seg_2_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="seg_2"/>
+    <origin rpy="0 0 0" xyz="-1.0 0 3"/>
+  </joint>
+
+  <!-- FIXME: should probably change 'continuous' joints to 'revolute' joints
+              and add joint limits -->
+  <joint name="seg_2_left_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_2"/>
+    <child link="seg_2_left_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_2_right_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_2"/>
+    <child link="seg_2_right_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_2_left_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_2_left_upper_leg_link"/>
+    <child link="seg_2_left_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_2_right_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_2_right_upper_leg_link"/>
+    <child link="seg_2_right_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <!-- segment 3 -->
+  <joint name="seg_3_fixed" type="fixed">
+    <parent link="world"/>
+    <child link="seg_3"/>
+    <origin rpy="0 0 0" xyz="-1.5 0 3"/>
+  </joint>
+
+  <!-- FIXME: should probably change 'continuous' joints to 'revolute' joints
+              and add joint limits -->
+  <joint name="seg_3_left_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_3"/>
+    <child link="seg_3_left_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_3_right_hip_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="seg_3"/>
+    <child link="seg_3_right_upper_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.1524 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_3_left_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_3_left_upper_leg_link"/>
+    <child link="seg_3_left_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+  <joint name="seg_3_right_knee_joint" type="continuous">
+    <axis xyz="1 0 0"/>
+    <parent link="seg_3_right_upper_leg_link"/>
+    <child link="seg_3_right_lower_leg_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.5 0"/>
+    <dynamics friction="0.1" damping="0.5"/>
+  </joint>
+
+<!-- Gazebo definitions - only used in Gazebo simulation -->
+
+  <!-- segment 0 -->
+  <gazebo reference="seg_0">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="seg_0_left_upper_leg_link">
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_0_right_upper_leg_link">
+      <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_0_left_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_0_right_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_0_left_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg0_leftleg_to_lefthip</cmdPosTopic>
+      <anglePosTopic>seg0_lefthip_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_0_right_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg0_rightleg_to_righthip</cmdPosTopic>
+      <anglePosTopic>seg0_righthip_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_0_left_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg0_leftleg_to_leftknee</cmdPosTopic>
+      <anglePosTopic>seg0_leftknee_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_0_right_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg0_rightleg_to_rightknee</cmdPosTopic>
+      <anglePosTopic>seg0_rightknee_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <!-- segment 1 -->
+  <gazebo reference="seg_1">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="seg_1_left_upper_leg_link">
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_1_right_upper_leg_link">
+      <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_1_left_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_1_right_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_1_left_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg1_leftleg_to_lefthip</cmdPosTopic>
+      <anglePosTopic>seg1_lefthip_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_1_right_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg1_rightleg_to_righthip</cmdPosTopic>
+      <anglePosTopic>seg1_righthip_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_1_left_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg1_leftleg_to_leftknee</cmdPosTopic>
+      <anglePosTopic>seg1_leftknee_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_1_right_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg1_rightleg_to_rightknee</cmdPosTopic>
+      <anglePosTopic>seg1_rightknee_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <!-- segment 2 -->
+  <gazebo reference="seg_2">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="seg_2_left_upper_leg_link">
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_2_right_upper_leg_link">
+      <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_2_left_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_2_right_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_2_left_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg2_leftleg_to_lefthip</cmdPosTopic>
+      <anglePosTopic>seg2_lefthip_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_2_right_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg2_rightleg_to_righthip</cmdPosTopic>
+      <anglePosTopic>seg2_righthip_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_2_left_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg2_leftleg_to_leftknee</cmdPosTopic>
+      <anglePosTopic>seg2_leftknee_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_2_right_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg2_rightleg_to_rightknee</cmdPosTopic>
+      <anglePosTopic>seg2_rightknee_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <!-- segment 3 -->
+  <gazebo reference="seg_3">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="seg_3_left_upper_leg_link">
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_3_right_upper_leg_link">
+      <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_3_left_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo reference="seg_3_right_lower_leg_link">
+    <material>Gazebo/Orange</material>
+    <selfCollide>True</selfCollide>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_3_left_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg3_leftleg_to_lefthip</cmdPosTopic>
+      <anglePosTopic>seg3_lefthip_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_3_right_hip_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg3_rightleg_to_righthip</cmdPosTopic>
+      <anglePosTopic>seg3_righthip_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_3_left_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg3_leftleg_to_leftknee</cmdPosTopic>
+      <anglePosTopic>seg3_leftknee_to_leftleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="boilerplate_motor_plugin"
+            filename="libboilerplate_motor_plugin.so">
+      <actuatorJoint>seg_3_right_knee_joint</actuatorJoint>
+      <maxTorque>40.0</maxTorque>
+      <posPidPGain>400.0</posPidPGain>
+      <posPidIGain>175.0</posPidIGain>
+      <posPidDGain>600.0</posPidDGain>
+      <posPidIMax>40.0</posPidIMax>
+      <posPidIMin>-40.0</posPidIMin>
+      <initialPosition>0.0</initialPosition>
+      <cmdPosTopic>seg3_rightleg_to_rightknee</cmdPosTopic>
+      <anglePosTopic>seg3_rightknee_to_rightleg</anglePosTopic>
+    </plugin>
+  </gazebo>
+
+</robot>

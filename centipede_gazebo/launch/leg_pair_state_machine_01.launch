@@ -1,0 +1,12 @@
+<launch>
+  <!-- Load the URDF model into the parameter server -->
+  <param name="robot_description" textfile="$(find centipede_description)/urdf/centipede_segment_01.urdf"/>
+
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+  <!-- Spawn a urdf in Gazebo, taking the description from the parameter server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model centipede_segment_1 -x 0 -y 0 -z 0" />
+        <!-- Note: I'm explicitly setting the spawn location - this can be a useful trick... -->
+  <node name="leg_pair_state_machine" pkg="centipede_description" type="leg_pair_state_machine.py" output="screen" launch-prefix="xterm -e" />
+</launch>

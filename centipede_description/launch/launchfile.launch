@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+  <!--Start FSM nodes-->
+  <node name="hebiros_node" output="screen" launch-prefix="xterm -e" pkg="hebiros" type="hebiros_node"/>
+  <node args="-hebi_group_name FrontLeft -ros_rate 100 -ankle_family HEBI -ankle_name elbow -knee_name shoulder -hip_name base -to_master to_master -hip_family HEBI -from_master from_master -knee_family HEBI" name="ThreeDofLegFSM_HEBI" output="screen" pkg="centipede_description" type="three_dof_leg_fsm_node_v2.py"
+        launch-prefix="xterm -e"/>
+</launch>
