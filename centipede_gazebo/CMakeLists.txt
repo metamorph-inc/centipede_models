@@ -9,6 +9,13 @@ find_package(catkin REQUIRED COMPONENTS
   smach_viewer
 )
 
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES crab_gazebo
+#  CATKIN_DEPENDS gazebo_plugins gazebo_ros roscpp rospy
+#  DEPENDS system_lib
+)
+
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
