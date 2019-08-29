@@ -5,8 +5,6 @@ project(centipede_gazebo)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_ros
-  smach_viewer
 )
 
 catkin_package(

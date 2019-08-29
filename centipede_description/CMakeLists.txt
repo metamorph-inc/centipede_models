@@ -8,11 +8,6 @@ project(centipede_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  sensor_msgs
-  std_msgs
-  simplemotorpluginexample_gazebo
 )
 
 catkin_package(
